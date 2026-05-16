@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Young Simulation Platform</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <div>
+                <h1 data-i18n="siteTitle">Young Simulation Platform</h1>
+                <p data-i18n="siteSubtitle">Dynamic computational simulation platform</p>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button id="languageBtn" class="ghost-btn">中文</button>
+        </div>
+    </header>
+
+    <nav class="top-nav">
+        <a href="#condensed" data-i18n="navCondensed">Computational Condensed Matter Physics</a>
+        <a href="#electrochemistry" data-i18n="navElectrochemistry">Computational Electrochemistry</a>
+        <a href="#fluid" data-i18n="navFluid">Computational Fluid Mechanics</a>
+    </nav>
+
+    <main class="main-container">
+        <section class="hero-card">
+            <div>
+                <h2 data-i18n="heroTitle">Young Simulation Platform</h2>
+                <p data-i18n="heroText">
+                    An interactive simulation and visualization platform with customizable geometry, materials,
+                    boundary conditions, solver settings, axis labels and dynamic rendering.
+                </p>
+            </div>
+        </section>
+
+        <section id="condensed" class="simulation-section">
+            <div class="section-title-row">
+                <div>
+                    <h2 data-i18n="condensedTitle">Computational Condensed Matter Physics</h2>
+                    <p data-i18n="condensedDesc">Electronic structure, transport and crystal structure modeling.</p>
+                </div>
+                <span class="section-tag">01</span>
+            </div>
+
+            <div class="simulation-layout">
+                <aside class="control-card">
+                    <h3 data-i18n="modelBuilder">Model Builder</h3>
+
+                    <label class="input-label" for="condensedModel" data-i18n="selectModel">Select model</label>
+                    <select id="condensedModel" class="input-control">
+                        <option value="electronicStructure" data-i18n="electronicStructure">Electronic Structure Calculation</option>
+                        <option value="transportTheory" data-i18n="transportTheory">Transport Theory Simulation</option>
+                        <option value="crystalStructure" data-i18n="crystalStructure">Crystal Structure Calculation</option>
+                    </select>
+
+                    <div id="condensedParams" class="parameter-container"></div>
+
+                    <div class="button-group">
+                        <button class="primary-btn" onclick="runSection('condensed')" data-i18n="runSimulation">Run Simulation</button>
+                        <button class="secondary-btn" onclick="animateSection('condensed')" data-i18n="animate">Animate</button>
+                        <button class="secondary-btn" onclick="stopAnimation('condensed')" data-i18n="stop">Stop</button>
+                        <button class="secondary-btn" onclick="clearSection('condensed')" data-i18n="clear">Clear</button>
+                        <button class="secondary-btn" onclick="downloadCSV('condensed')" data-i18n="downloadCsv">Download CSV</button>
+                        <button class="secondary-btn" onclick="downloadPNG('condensed')" data-i18n="downloadPng">Download PNG</button>
+                    </div>
+                </aside>
+
+                <div class="plot-card">
+                    <div class="plot-header">
+                        <div>
+                            <h3 id="condensedPlotTitle">Electronic Structure Calculation</h3>
+                            <p id="condensedDescription" class="plot-desc"></p>
+                        </div>
+                    </div>
+                    <div id="condensedPlot" class="plot-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="electrochemistry" class="simulation-section">
+            <div class="section-title-row">
+                <div>
+                    <h2 data-i18n="electrochemistryTitle">Computational Electrochemistry</h2>
+                    <p data-i18n="electrochemistryDesc">Interface, reaction kinetics and coupled electrochemical fields.</p>
+                </div>
+                <span class="section-tag">02</span>
+            </div>
+
+            <div class="simulation-layout">
+                <aside class="control-card">
+                    <h3 data-i18n="modelBuilder">Model Builder</h3>
+
+                    <label class="input-label" for="electrochemistryModel" data-i18n="selectModel">Select model</label>
+                    <select id="electrochemistryModel" class="input-control">
+                        <option value="interfaceElectrochemistry" data-i18n="interfaceElectrochemistry">Interfacial Electrochemistry Calculation</option>
+                        <option value="reactionKinetics" data-i18n="reactionKinetics">Electrochemical Reaction Kinetics Simulation</option>
+                        <option value="multiphysicsElectrochemistry" data-i18n="multiphysicsElectrochemistry">Multiphysics Electrochemical Simulation</option>
+                    </select>
+
+                    <div id="electrochemistryParams" class="parameter-container"></div>
+
+                    <div class="button-group">
+                        <button class="primary-btn" onclick="runSection('electrochemistry')" data-i18n="runSimulation">Run Simulation</button>
+                        <button class="secondary-btn" onclick="animateSection('electrochemistry')" data-i18n="animate">Animate</button>
+                        <button class="secondary-btn" onclick="stopAnimation('electrochemistry')" data-i18n="stop">Stop</button>
+                        <button class="secondary-btn" onclick="clearSection('electrochemistry')" data-i18n="clear">Clear</button>
+                        <button class="secondary-btn" onclick="downloadCSV('electrochemistry')" data-i18n="downloadCsv">Download CSV</button>
+                        <button class="secondary-btn" onclick="downloadPNG('electrochemistry')" data-i18n="downloadPng">Download PNG</button>
+                    </div>
+                </aside>
+
+                <div class="plot-card">
+                    <div class="plot-header">
+                        <div>
+                            <h3 id="electrochemistryPlotTitle">Interfacial Electrochemistry Calculation</h3>
+                            <p id="electrochemistryDescription" class="plot-desc"></p>
+                        </div>
+                    </div>
+                    <div id="electrochemistryPlot" class="plot-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fluid" class="simulation-section">
+            <div class="section-title-row">
+                <div>
+                    <h2 data-i18n="fluidTitle">Computational Fluid Mechanics</h2>
+                    <p data-i18n="fluidDesc">Wave, boundary layer and turbulence field visualization.</p>
+                </div>
+                <span class="section-tag">03</span>
+            </div>
+
+            <div class="simulation-layout">
+                <aside class="control-card">
+                    <h3 data-i18n="modelBuilder">Model Builder</h3>
+
+                    <label class="input-label" for="fluidModel" data-i18n="selectModel">Select model</label>
+                    <select id="fluidModel" class="input-control">
+                        <option value="waveTheory" data-i18n="waveTheory">Fluid Wave Theory</option>
+                        <option value="boundaryLayer" data-i18n="boundaryLayer">Boundary Layer Theory</option>
+                        <option value="turbulenceTheory" data-i18n="turbulenceTheory">Turbulence Theory Simulation</option>
+                    </select>
+
+                    <div id="fluidParams" class="parameter-container"></div>
+
+                    <div class="button-group">
+                        <button class="primary-btn" onclick="runSection('fluid')" data-i18n="runSimulation">Run Simulation</button>
+                        <button class="secondary-btn" onclick="animateSection('fluid')" data-i18n="animate">Animate</button>
+                        <button class="secondary-btn" onclick="stopAnimation('fluid')" data-i18n="stop">Stop</button>
+                        <button class="secondary-btn" onclick="clearSection('fluid')" data-i18n="clear">Clear</button>
+                        <button class="secondary-btn" onclick="downloadCSV('fluid')" data-i18n="downloadCsv">Download CSV</button>
+                        <button class="secondary-btn" onclick="downloadPNG('fluid')" data-i18n="downloadPng">Download PNG</button>
+                    </div>
+                </aside>
+
+                <div class="plot-card">
+                    <div class="plot-header">
+                        <div>
+                            <h3 id="fluidPlotTitle">Fluid Wave Theory</h3>
+                            <p id="fluidDescription" class="plot-desc"></p>
+                        </div>
+                    </div>
+                    <div id="fluidPlot" class="plot-box"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            <strong>Young Simulation Platform</strong> ·
+            <span data-i18n="footerText">Dynamic computational simulation and visualization platform</span>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

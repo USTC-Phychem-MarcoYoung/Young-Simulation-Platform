@@ -1,0 +1,501 @@
+﻿/* =========================
+   Young Simulation Platform
+   Academic Paper Style
+   ========================= */
+
+:root {
+    --bg: #f7f5f0;
+    --paper: #ffffff;
+    --ink: #1f1f1f;
+    --muted: #5f6368;
+    --line: #d8d3c8;
+    --accent: #253f5f;
+    --accent-light: #eef2f6;
+    --accent-soft: #f4f6f8;
+    --danger: #8a2d2d;
+    --shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Times New Roman", Times, "SimSun", serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Header
+   不 sticky，避免挡住图
+   ========================= */
+
+.site-header {
+    background: rgba(247, 245, 240, 0.98);
+    border-bottom: 1px solid var(--line);
+}
+
+.header-left {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 15px 26px 8px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo-box {
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--accent);
+    background: var(--paper);
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.site-header h1 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.site-header p {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.header-actions {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 26px 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* =========================
+   Top Navigation
+   ========================= */
+
+.top-nav {
+    background: rgba(247, 245, 240, 0.98);
+    border-bottom: 1px solid var(--line);
+    padding: 13px 26px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.top-nav a {
+    color: var(--ink);
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.top-nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.ghost-btn,
+.primary-btn,
+.secondary-btn {
+    font-family: "Times New Roman", Times, "SimSun", serif;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ghost-btn {
+    padding: 6px 15px;
+    font-size: 15px;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+}
+
+.ghost-btn:hover {
+    color: #ffffff;
+    background: var(--accent);
+}
+
+.primary-btn {
+    padding: 9px 18px;
+    font-size: 16px;
+    color: #ffffff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.primary-btn:hover {
+    background: #1f2d3d;
+    border-color: #1f2d3d;
+}
+
+.secondary-btn {
+    padding: 9px 18px;
+    font-size: 16px;
+    color: var(--accent);
+    background: var(--paper);
+    border: 1px solid var(--accent);
+}
+
+.secondary-btn:hover {
+    color: #ffffff;
+    background: var(--accent);
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+.main-container {
+    max-width: 1120px;
+    margin: 52px auto 70px;
+    padding: 0 26px;
+}
+
+.hero-card {
+    margin-bottom: 58px;
+    padding: 60px 40px 56px;
+    text-align: center;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)),
+        radial-gradient(circle at 20% 10%, #dfe8f2, transparent 35%),
+        radial-gradient(circle at 80% 30%, #eee4d2, transparent 38%);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
+
+.hero-card h2 {
+    margin-bottom: 16px;
+    color: var(--ink);
+    font-size: 52px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.hero-card p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 18px;
+}
+
+/* =========================
+   Simulation Section
+   ========================= */
+
+.simulation-section {
+    margin-bottom: 74px;
+    scroll-margin-top: 30px;
+}
+
+.section-title-row {
+    margin-bottom: 24px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-end;
+}
+
+.section-title-row h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.section-title-row p {
+    max-width: 860px;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 16.5px;
+}
+
+.section-tag {
+    min-width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* =========================
+   关键布局：
+   上面设置，下面出图
+   ========================= */
+
+.simulation-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+/* 设置卡片在上 */
+.control-card {
+    background: var(--paper);
+    padding: 26px 28px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
+
+/* 出图卡片在下 */
+.plot-card {
+    background: var(--paper);
+    padding: 24px 26px 26px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
+
+.control-card h3,
+.plot-card h3 {
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.plot-desc {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+/* =========================
+   Form
+   ========================= */
+
+.input-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink);
+    font-size: 15.5px;
+    font-weight: 700;
+}
+
+.input-control {
+    width: 100%;
+    padding: 9px 11px;
+    color: var(--ink);
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: "Times New Roman", Times, "SimSun", serif;
+    font-size: 15.5px;
+    outline: none;
+}
+
+.input-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(37, 63, 95, 0.08);
+}
+
+.textarea-control {
+    min-height: 92px;
+    resize: vertical;
+    line-height: 1.5;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 14px;
+}
+
+.parameter-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 18px;
+}
+
+.param-group {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding: 10px 14px;
+    color: var(--accent);
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.parameter-item {
+    min-width: 0;
+}
+
+.parameter-hint {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.button-group {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =========================
+   Plot
+   ========================= */
+
+.plot-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.plot-box {
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer {
+    padding: 34px 20px;
+    color: #e7e2d8;
+    background: #1f2d3d;
+    text-align: center;
+    font-size: 15px;
+}
+
+.site-footer p {
+    margin: 4px 0;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 980px) {
+    .header-left,
+    .header-actions,
+    .main-container {
+        max-width: 100%;
+    }
+
+    .hero-card h2 {
+        font-size: 44px;
+    }
+
+    .parameter-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .plot-box {
+        height: 620px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 16px;
+    }
+
+    .header-left {
+        padding: 14px 20px 8px;
+    }
+
+    .header-actions {
+        padding: 0 20px 14px;
+    }
+
+    .top-nav {
+        justify-content: flex-start;
+        padding: 12px 20px;
+        gap: 12px 18px;
+    }
+
+    .main-container {
+        margin: 44px auto 58px;
+        padding: 0 20px;
+    }
+
+    .hero-card {
+        padding: 44px 22px 42px;
+    }
+
+    .hero-card h2 {
+        font-size: 36px;
+    }
+
+    .section-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-title-row h2 {
+        font-size: 27px;
+    }
+
+    .control-card,
+    .plot-card {
+        padding: 22px;
+    }
+
+    .parameter-container {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .plot-box {
+        height: 520px;
+    }
+}
