@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Young Simulation Platform</title>
 
-    <link rel="stylesheet" href="/Young-Simulation-Platform/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
@@ -32,14 +32,20 @@
 
     <main class="main-container">
         <section class="hero-card">
-            <div>
-                <h2 data-i18n="heroTitle">Young Simulation Platform</h2>
-                <p data-i18n="heroText">
-                    An interactive simulation and visualization platform with customizable geometry, materials,
-                    boundary conditions, solver settings, axis labels and dynamic rendering.
-                </p>
-            </div>
-        </section>
+    <div>
+        <h2 data-i18n="heroTitle">Young Simulation Platform</h2>
+        <p data-i18n="heroText">
+            An interactive simulation and visualization platform with customizable geometry, materials,
+            boundary conditions, solver settings, axis labels and dynamic rendering.
+        </p>
+
+        <div class="tutorial-links">
+            <a class="primary-btn" href="Simulation Tutorial/模拟教程.pdf" target="_blank">
+                查看模拟教程 PDF
+                        </a>
+        </div>
+    </div>
+</section>
 
         <section id="condensed" class="simulation-section">
             <div class="section-title-row">
@@ -47,7 +53,6 @@
                     <h2 data-i18n="condensedTitle">Computational Condensed Matter Physics</h2>
                     <p data-i18n="condensedDesc">Electronic structure, transport and crystal structure modeling.</p>
                 </div>
-                <span class="section-tag">01</span>
             </div>
 
             <div class="simulation-layout">
@@ -91,7 +96,6 @@
                     <h2 data-i18n="electrochemistryTitle">Computational Electrochemistry</h2>
                     <p data-i18n="electrochemistryDesc">Interface, reaction kinetics and coupled electrochemical fields.</p>
                 </div>
-                <span class="section-tag">02</span>
             </div>
 
             <div class="simulation-layout">
@@ -135,7 +139,6 @@
                     <h2 data-i18n="fluidTitle">Computational Fluid Mechanics</h2>
                     <p data-i18n="fluidDesc">Wave, boundary layer and turbulence field visualization.</p>
                 </div>
-                <span class="section-tag">03</span>
             </div>
 
             <div class="simulation-layout">
